@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     //MARK: - Properties
     let sharedInstance = LocationService.sharedInstance
-    //MARK: - IBOutlets
+
         
     //MARK: - Initialization
     override func viewDidLoad() {
