@@ -10,19 +10,22 @@ import Foundation
 import CoreLocation
 
 class LocationService: NSObject {
+    //MARK: - todo
+    // code commenting
+    // clean up code
     
 
     //MARK: - Properties
     static let sharedInstance = LocationService()
     let locationManager: CLLocationManager
-    var location = CLLocation()
+    var location: CLLocation?
     var geocoder = Geocoder()
     
     
     //MARK: - Initialization
     override private init() {
         locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         super.init()
         
@@ -30,7 +33,6 @@ class LocationService: NSObject {
         
         print("Location Service initialized")
     }
-    
     
     //MARK: - Methods
     func stopUpdatingLocations() {
@@ -59,11 +61,12 @@ extension LocationService: CLLocationManagerDelegate {
         case .authorizedAlways:
             print("auth status: OK always.")
         case .restricted:
-            print("User has restricted device. Show alert")
+            print("User has restricted device.")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //this is called every time the user's location changes
         guard let currentLocation = locations.last else {
             print("nothing in locations")
             return

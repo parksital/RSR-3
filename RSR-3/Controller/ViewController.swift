@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController {    
     
     //MARK: - Properties
     let sharedInstance = LocationService.sharedInstance
@@ -34,5 +34,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //MARK: - IBActions
 }

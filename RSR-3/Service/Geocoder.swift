@@ -12,8 +12,9 @@ import CoreLocation
 class Geocoder: CLGeocoder {
     
     //MARK: - TODO
+    // code commenting
     // clean up code
-    // add comments
+    
     
     
     // last time and place we successfully fetched
