@@ -133,7 +133,7 @@ Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bez
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2P-Tq-EXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1323.75" y="-172.18309859154931"/>
+            <point key="canvasLocation" x="1508" y="-303"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="vB3-TM-oHO">
@@ -290,7 +290,7 @@ voor het telefoongesprek</string>
                     <viewLayoutGuide key="safeArea" id="yyQ-lP-b0d"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1324" y="937"/>
+            <point key="canvasLocation" x="1508" y="603"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bD6-kD-yHC">

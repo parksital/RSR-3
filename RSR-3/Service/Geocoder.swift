@@ -11,6 +11,11 @@ import CoreLocation
 
 class Geocoder: CLGeocoder {
     
+    //MARK: - TODO
+    // clean up code
+    // add comments
+    
+    
     // last time and place we successfully fetched
     var timeOfLastFetch = Date()
     var locationOfLastFetch = CLLocation()
@@ -22,6 +27,7 @@ class Geocoder: CLGeocoder {
         super.init()
         print("Geocoder initialized")
     }
+    
     
     func tryNewFetchRequestForLocation(_ currentLocation: CLLocation, currentTime: Date) {
         if firstFetch {
