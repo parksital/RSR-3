@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A008BD26204E8D2B0037C6BD /* AddressWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BD25204E8D2B0037C6BD /* AddressWindowView.swift */; };
 		A008BD28204EA07C0037C6BD /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BD27204EA07C0037C6BD /* Geocoder.swift */; };
 		A079D838204DCB2E00A448BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D837204DCB2E00A448BC /* AppDelegate.swift */; };
 		A079D83A204DCB2E00A448BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D839204DCB2E00A448BC /* ViewController.swift */; };
@@ -40,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A008BD25204E8D2B0037C6BD /* AddressWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWindowView.swift; sourceTree = "<group>"; };
 		A008BD27204EA07C0037C6BD /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		A079D834204DCB2E00A448BC /* RSR-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSR-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A079D837204DCB2E00A448BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			children = (
 				A079D839204DCB2E00A448BC /* ViewController.swift */,
 				A079D86E204DCC6100A448BC /* MapViewController.swift */,
-				A008BD25204E8D2B0037C6BD /* AddressWindowView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,7 +309,6 @@
 				A079D86D204DCBB300A448BC /* LocationService.swift in Sources */,
 				A079D838204DCB2E00A448BC /* AppDelegate.swift in Sources */,
 				A079D86F204DCC6100A448BC /* MapViewController.swift in Sources */,
-				A008BD26204E8D2B0037C6BD /* AddressWindowView.swift in Sources */,
 				A079D840204DCB2E00A448BC /* RSR_3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
