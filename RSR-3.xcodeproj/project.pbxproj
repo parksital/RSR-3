@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A008BD24204E8CBA0037C6BD /* AddressWindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A008BD23204E8CBA0037C6BD /* AddressWindowView.xib */; };
 		A008BD26204E8D2B0037C6BD /* AddressWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BD25204E8D2B0037C6BD /* AddressWindowView.swift */; };
 		A008BD28204EA07C0037C6BD /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BD27204EA07C0037C6BD /* Geocoder.swift */; };
 		A079D838204DCB2E00A448BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D837204DCB2E00A448BC /* AppDelegate.swift */; };
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A008BD23204E8CBA0037C6BD /* AddressWindowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressWindowView.xib; sourceTree = "<group>"; };
 		A008BD25204E8D2B0037C6BD /* AddressWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressWindowView.swift; sourceTree = "<group>"; };
 		A008BD27204EA07C0037C6BD /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
 		A079D834204DCB2E00A448BC /* RSR-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSR-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,6 @@
 				A079D86B204DCBA100A448BC /* Service */,
 				A079D870204DF3DF00A448BC /* Controller */,
 				A079D83B204DCB2E00A448BC /* Main.storyboard */,
-				A008BD23204E8CBA0037C6BD /* AddressWindowView.xib */,
 				A079D841204DCB2E00A448BC /* Assets.xcassets */,
 				A079D843204DCB2E00A448BC /* LaunchScreen.storyboard */,
 				A079D846204DCB2E00A448BC /* Info.plist */,
@@ -286,7 +283,6 @@
 				A079D845204DCB2E00A448BC /* LaunchScreen.storyboard in Resources */,
 				A079D842204DCB2E00A448BC /* Assets.xcassets in Resources */,
 				A079D83D204DCB2E00A448BC /* Main.storyboard in Resources */,
-				A008BD24204E8CBA0037C6BD /* AddressWindowView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

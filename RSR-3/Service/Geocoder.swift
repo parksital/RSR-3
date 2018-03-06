@@ -16,6 +16,7 @@ class Geocoder: CLGeocoder {
     var locationOfLastFetch = CLLocation()
     var firstFetch = true
     var currentAddress = ""
+    var currentSubAddress = ""
     
     override init() {
         super.init()
@@ -28,9 +29,10 @@ class Geocoder: CLGeocoder {
             LocationService.sharedInstance.stopUpdatingLocations()
             self.firstFetch = false
             
-            fetchRequestForLocation(currentLocation, completion: { (address) in
+            fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
                 self.updateTimeAndLocationOfLastFetchRequest(currentLocation: currentLocation, currentTime: currentTime)
                 self.currentAddress = address
+                self.currentSubAddress = subAddress
                 print("Got first address! - updated time and locatin of last fetch")
                 
                 LocationService.sharedInstance.startUpdatingLocations()
@@ -49,15 +51,17 @@ class Geocoder: CLGeocoder {
                 break
             case (false, true):
                 print("Fetching: Out of range - need new fetch")
-                fetchRequestForLocation(currentLocation, completion: { (address) in
+                fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
                     self.currentAddress = address
+                    self.currentSubAddress = subAddress
                     self.updateTimeAndLocationOfLastFetchRequest(currentLocation: currentLocation, currentTime: currentTime)
                 })
                 break
             case (false, false):
                 print("Fetching: Out of range. Out of time - need new fetch")
-                fetchRequestForLocation(currentLocation, completion: { (address) in
+                fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
                     self.currentAddress = address
+                    self.currentSubAddress = subAddress
                     self.updateTimeAndLocationOfLastFetchRequest(currentLocation: currentLocation, currentTime: currentTime)
                 })
                 break
@@ -71,7 +75,7 @@ class Geocoder: CLGeocoder {
     }
     
     
-    func fetchRequestForLocation(_ location: CLLocation, completion: @escaping (String) -> ()) {
+    func fetchRequestForLocation(_ location: CLLocation, completion: @escaping (String, String) -> ()) {
         
         CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
             if error != nil {
@@ -80,9 +84,14 @@ class Geocoder: CLGeocoder {
             } else {
                 if let placemarks = placemarks, let placemark = placemarks.first {
                     
-                    guard let address = placemark.thoroughfare else { return }
+                    guard let street = placemark.thoroughfare else { return }
+                    guard let postalCode = placemark.postalCode else { return }
+                    guard let city = placemark.locality else { return }
                     print("grabbing address")
-                    completion(address)
+                    
+                    let address = "\(street), "
+                    let subAddress = "\(postalCode), \(city)"
+                    completion(address, subAddress)
                 }
             }
         }

@@ -9,10 +9,10 @@
 import UIKit
 
 class AddressWindowView: UIView {
-
+    
     @IBOutlet weak var addressLabel: UILabel!
     
-    
+       
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

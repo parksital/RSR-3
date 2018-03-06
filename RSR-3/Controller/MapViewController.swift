@@ -14,12 +14,17 @@ class MapViewController: UIViewController {
     
     //MARK: - Properties
     let sharedInstance = LocationService.sharedInstance
-    let geocoder = LocationService.sharedInstance.geocoder
     
     //MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var belKostenWindow: UIView!
     @IBOutlet weak var belRSRNuButton: UIButton!
+    
+    //address window view outlets
+    @IBOutlet var addressWindowView: UIView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var subAddressLabel: UILabel!
+    
     
     //MARK: - Initialization
     override func viewDidLoad() {
@@ -30,6 +35,7 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpMapView()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,10 +64,20 @@ class MapViewController: UIViewController {
         
         // make the belkosten window invisble
         belKostenWindow.alpha = 0.0
+        
+        var calloutViewFrame = addressWindowView.frame
+        // I had to hardcode this, feels bad man
+        
+        let address = sharedInstance.geocoder.currentAddress
+        let subAddress = sharedInstance.geocoder.currentSubAddress
+        
+        addressLabel.text = address
+        subAddressLabel.text = subAddress
+        calloutViewFrame.origin = CGPoint(x: -calloutViewFrame.size.width / 2 + 15, y: -calloutViewFrame.size.height)
+        addressWindowView.frame = calloutViewFrame
     }
     
     //MARK: - IBActions
-    
     @IBAction func belNuButtonPressed(_ sender: UIButton) {
         let phone = "31204002679"
         
@@ -72,25 +88,24 @@ class MapViewController: UIViewController {
     
     @IBAction func belRSRButtonPressed(_ sender: UIButton) {
         // make annotation callout disappear
-        
         UIView.animate(withDuration: 0.5, animations: {
             self.belKostenWindow.alpha = 1.0    //make belKostenWindow appear
+            self.addressWindowView.alpha = 0.0  // make address window disappear
             sender.alpha = 0.0      // make sender button disappear
         })
     }
     
     @IBAction func annulerenButtonPressed(_ sender: UIButton) {
-        //make annotation callout re-apear
-        
         UIView.animate(withDuration: 0.5, animations: {
             self.belKostenWindow.alpha  = 0.0   //make belKostenWindow disappear
+            self.addressWindowView.alpha = 1.0  // make address window re-appear
             self.belRSRNuButton.alpha   = 1.0   //make sender button re-appear
         })
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
-
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is MKUserLocation) {
             // we need the user location annotation
@@ -106,16 +121,8 @@ extension MapViewController: MKMapViewDelegate {
             pinView.canShowCallout  = false
             pinView.pinTintColor    = .red
             
-            // add custom callout here
-            if let addressView = Bundle.main.loadNibNamed("AddressWindowView", owner: self, options: nil)?.first as? AddressWindowView {
-                
-                var calloutViewFrame = addressView.frame
-                
-                // I had to hardcode this, feels bad man
-                calloutViewFrame.origin = CGPoint(x: -calloutViewFrame.size.width / 2 + 15, y: -calloutViewFrame.size.height)
-                addressView.frame = calloutViewFrame
-                pinView.addSubview(addressView)
-            }
+            
+            pinView.addSubview(addressWindowView)
             
             // return the pin
             return pinView
