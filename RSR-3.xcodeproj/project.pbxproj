@@ -21,7 +21,6 @@
 		A079D86A204DCB4100A448BC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A079D869204DCB4100A448BC /* MapKit.framework */; };
 		A079D86D204DCBB300A448BC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D86C204DCBB300A448BC /* LocationService.swift */; };
 		A079D86F204DCC6100A448BC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D86E204DCC6100A448BC /* MapViewController.swift */; };
-		A079D872204DF41900A448BC /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D871204DF41900A448BC /* Annotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		A079D869204DCB4100A448BC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A079D86C204DCBB300A448BC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A079D86E204DCC6100A448BC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		A079D871204DF41900A448BC /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +157,6 @@
 			children = (
 				A079D86C204DCBB300A448BC /* LocationService.swift */,
 				A008BD27204EA07C0037C6BD /* Geocoder.swift */,
-				A079D871204DF41900A448BC /* Annotation.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				A079D838204DCB2E00A448BC /* AppDelegate.swift in Sources */,
 				A079D86F204DCC6100A448BC /* MapViewController.swift in Sources */,
 				A008BD26204E8D2B0037C6BD /* AddressWindowView.swift in Sources */,
-				A079D872204DF41900A448BC /* Annotation.swift in Sources */,
 				A079D840204DCB2E00A448BC /* RSR_3.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

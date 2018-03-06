@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBarImage  = UIImage(named: "navig_bar_back")
         navigationBarAppearance.setBackgroundImage(navigationBarImage, for: UIBarPosition.top, barMetrics: UIBarMetrics.default)
         
-        
         return true
     }
 

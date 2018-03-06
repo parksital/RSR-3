@@ -13,14 +13,12 @@ class ViewController: UIViewController {
     //MARK: - Properties
     
     //MARK: - IBOutlets
-    
         
     //MARK: - Initialization
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         setUpNavigationBar()
-        
-        
     }
     
     //MARK: - Set Up UI

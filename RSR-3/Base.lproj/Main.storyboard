@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8fX-dX-173">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,14 +21,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RSR_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background-i5" translatesAutoresizingMaskIntoConstraints="NO" id="dxB-1i-Hdk">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhH-Gn-sIG">
-                                <rect key="frame" x="44" y="553" width="286" height="54"/>
+                                <rect key="frame" x="17" y="454" width="286" height="54"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="   RSR Pechhulp" image="ic_attention" backgroundImage="btn_normal"/>
                                 <connections>
@@ -64,34 +64,34 @@
             <objects>
                 <viewController id="NlW-ld-nsl" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UX4-0J-VE5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sP6-WR-frc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efk-ac-MS8" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="over_image" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-dD-4U7">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="9eY-dD-4U7" secondAttribute="height" multiplier="375:253" id="ibQ-wV-4UN"/>
+                                                    <constraint firstAttribute="width" secondItem="9eY-dD-4U7" secondAttribute="height" multiplier="40:27" id="18G-hy-Kgb"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="mKp-CB-lvW">
-                                                <rect key="frame" x="0.0" y="252" width="375" height="8"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="mKp-CB-lvW">
+                                                <rect key="frame" x="0.0" y="216" width="320" height="8"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsc-rP-wby">
-                                                <rect key="frame" x="12" y="272" width="351" height="254"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsc-rP-wby">
+                                                <rect key="frame" x="12" y="234" width="296" height="272"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="254" id="Nuk-qI-sRZ"/>
+                                                    <constraint firstAttribute="height" constant="272" id="Ciy-WP-F4q"/>
                                                 </constraints>
-                                                <string key="text">Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.
+                                                <mutableString key="text">Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.
 
 Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel.
-</string>
+</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -99,15 +99,15 @@ Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bez
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="mKp-CB-lvW" firstAttribute="top" secondItem="9eY-dD-4U7" secondAttribute="bottom" constant="-1" id="07m-uK-PYQ"/>
-                                            <constraint firstItem="zsc-rP-wby" firstAttribute="top" secondItem="mKp-CB-lvW" secondAttribute="bottom" constant="12" id="1L0-xE-9nX"/>
                                             <constraint firstItem="mKp-CB-lvW" firstAttribute="leading" secondItem="efk-ac-MS8" secondAttribute="leading" id="1rr-QI-Xts"/>
+                                            <constraint firstItem="mKp-CB-lvW" firstAttribute="top" secondItem="9eY-dD-4U7" secondAttribute="bottom" id="4Ca-fZ-KoL"/>
                                             <constraint firstAttribute="trailing" secondItem="9eY-dD-4U7" secondAttribute="trailing" id="AHS-oW-SAn"/>
+                                            <constraint firstItem="zsc-rP-wby" firstAttribute="top" secondItem="mKp-CB-lvW" secondAttribute="bottom" constant="10" id="D4o-Je-1or"/>
                                             <constraint firstAttribute="trailing" secondItem="mKp-CB-lvW" secondAttribute="trailing" id="QQG-iC-FlK"/>
-                                            <constraint firstItem="zsc-rP-wby" firstAttribute="leading" secondItem="efk-ac-MS8" secondAttribute="leading" constant="12" id="Wd1-rI-tEC"/>
                                             <constraint firstItem="9eY-dD-4U7" firstAttribute="top" secondItem="efk-ac-MS8" secondAttribute="top" id="aB1-IP-8Gr"/>
-                                            <constraint firstAttribute="trailing" secondItem="zsc-rP-wby" secondAttribute="trailing" constant="12" id="aeo-Po-nyP"/>
                                             <constraint firstItem="9eY-dD-4U7" firstAttribute="leading" secondItem="efk-ac-MS8" secondAttribute="leading" id="qEC-88-ftl"/>
+                                            <constraint firstItem="zsc-rP-wby" firstAttribute="leading" secondItem="efk-ac-MS8" secondAttribute="leading" constant="12" id="tvV-Nq-BM8"/>
+                                            <constraint firstAttribute="trailing" secondItem="zsc-rP-wby" secondAttribute="trailing" constant="12" id="zAF-bd-5QC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -133,21 +133,21 @@ Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bez
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2P-Tq-EXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324" y="-171.36431784107947"/>
+            <point key="canvasLocation" x="1323.75" y="-172.18309859154931"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="vB3-TM-oHO">
             <objects>
                 <viewController id="4bZ-28-PX0" customClass="MapViewController" customModule="RSR_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVs-tQ-HRJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVx-jI-1y9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUC-3r-8Ba">
-                                <rect key="frame" x="44" y="553" width="286" height="54"/>
+                                <rect key="frame" x="17" y="454" width="286" height="54"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="   Bel RSR nu" image="ic_phone" backgroundImage="btn_normal"/>
                                 <connections>
@@ -155,7 +155,7 @@ Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bez
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crE-qV-Ay7" userLabel="Bel Nu Popup">
-                                <rect key="frame" x="45" y="260.5" width="284" height="210"/>
+                                <rect key="frame" x="18" y="211" width="284" height="210"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_back" translatesAutoresizingMaskIntoConstraints="NO" id="eks-4U-I1w">
                                         <rect key="frame" x="0.0" y="26" width="284" height="184"/>
@@ -243,7 +243,7 @@ gebruikelijke belkosten.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8fX-dX-173" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="terug_normal" backIndicatorTransitionMaskImage="terug_pressed" id="IjE-Ug-jOi">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
