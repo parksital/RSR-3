@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         setUpNavigationBar()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     //MARK: - Set Up UI
