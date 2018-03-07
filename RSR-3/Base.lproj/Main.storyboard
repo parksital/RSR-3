@@ -80,10 +80,10 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="mKp-CB-lvW">
-                                                <rect key="frame" x="0.0" y="216" width="320" height="8"/>
+                                                <rect key="frame" x="0.0" y="215" width="320" height="8"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsc-rP-wby">
-                                                <rect key="frame" x="12" y="234" width="296" height="272"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsc-rP-wby">
+                                                <rect key="frame" x="12" y="233" width="296" height="272"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="272" id="Ciy-WP-F4q"/>
@@ -92,6 +92,7 @@
 
 Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel.
 </string>
+                                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -100,7 +101,7 @@ Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bez
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="mKp-CB-lvW" firstAttribute="leading" secondItem="efk-ac-MS8" secondAttribute="leading" id="1rr-QI-Xts"/>
-                                            <constraint firstItem="mKp-CB-lvW" firstAttribute="top" secondItem="9eY-dD-4U7" secondAttribute="bottom" id="4Ca-fZ-KoL"/>
+                                            <constraint firstItem="mKp-CB-lvW" firstAttribute="top" secondItem="9eY-dD-4U7" secondAttribute="bottom" constant="-1" id="4Ca-fZ-KoL"/>
                                             <constraint firstAttribute="trailing" secondItem="9eY-dD-4U7" secondAttribute="trailing" id="AHS-oW-SAn"/>
                                             <constraint firstItem="zsc-rP-wby" firstAttribute="top" secondItem="mKp-CB-lvW" secondAttribute="bottom" constant="10" id="D4o-Je-1or"/>
                                             <constraint firstAttribute="trailing" secondItem="mKp-CB-lvW" secondAttribute="trailing" id="QQG-iC-FlK"/>
