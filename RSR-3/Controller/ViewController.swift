@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         setUpNavigationBar()
         self.navigationController?.navigationBar.isHidden = true
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     //MARK: - Set Up UI
     func setUpNavigationBar() {
@@ -30,9 +34,12 @@ class ViewController: UIViewController {
         // set up the navigation bar's title
         self.navigationItem.title   = "RSR Revalidatieservice"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    //MARK: - IBActions
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        
+        
     }
+    
     
 }

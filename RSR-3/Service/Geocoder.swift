@@ -24,12 +24,16 @@ class Geocoder: CLGeocoder {
     var currentAddress = ""
     var currentSubAddress = ""
     
+    //MARK: - Initialization
     override init() {
         super.init()
         print("Geocoder initialized")
     }
     
+    //MARK: - Methods
     
+    //we are calling this method every time didUpdateLocation gets a new locations.
+    // didUpdateLocation is updated almost
     func tryNewFetchRequestForLocation(_ currentLocation: CLLocation, currentTime: Date) {
         if firstFetch {
         
@@ -37,7 +41,9 @@ class Geocoder: CLGeocoder {
             self.firstFetch = false
             
             fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
-                self.updateTimeAndLocationOfLastFetchRequest(currentLocation: currentLocation, currentTime: currentTime)
+                self.locationOfLastFetch = currentLocation
+                self.timeOfLastFetch = currentTime
+                
                 self.currentAddress = address
                 self.currentSubAddress = subAddress
                 print("Got first address! - updated time and locatin of last fetch")
@@ -61,7 +67,9 @@ class Geocoder: CLGeocoder {
                 fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
                     self.currentAddress = address
                     self.currentSubAddress = subAddress
-                    self.updateTimeAndLocationOfLastFetchRequest(currentLocation: currentLocation, currentTime: currentTime)
+                    
+                    self.locationOfLastFetch = currentLocation
+                    self.timeOfLastFetch = currentTime
                 })
                 break
             case (false, false):
@@ -69,18 +77,14 @@ class Geocoder: CLGeocoder {
                 fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
                     self.currentAddress = address
                     self.currentSubAddress = subAddress
-                    self.updateTimeAndLocationOfLastFetchRequest(currentLocation: currentLocation, currentTime: currentTime)
+                    
+                    self.locationOfLastFetch = currentLocation
+                    self.timeOfLastFetch = currentTime
                 })
                 break
             }
         }
     }
-
-    func updateTimeAndLocationOfLastFetchRequest(currentLocation: CLLocation, currentTime: Date) {
-        self.locationOfLastFetch = currentLocation
-        self.timeOfLastFetch = currentTime
-    }
-    
     
     func fetchRequestForLocation(_ location: CLLocation, completion: @escaping (String, String) -> ()) {
         
