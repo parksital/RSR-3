@@ -12,11 +12,12 @@ import CoreLocation
 class Geocoder: CLGeocoder {
     
     // last time and place we successfully fetched
-    var timeOfLastFetch = Date()
-    var locationOfLastFetch = CLLocation()
-    var firstFetch = true   // only true the first time
-    var currentAddress = "Streetname, "             // place holder
-    var currentSubAddress = "1234 XY, Amsterdam"    // placeholder
+    private var timeOfLastFetch = Date()
+    private var locationOfLastFetch = CLLocation()
+    private var firstFetch = true   // only true the first time
+    var currentAddress = "Streetname, "             // placeholder
+    var currentAddressDetail = "1234 XY, Amsterdam"    // placeholder
+    private let amountOfMinutes = 3 * 60.0
     
     //MARK: - Initialization
     override init() {
@@ -25,16 +26,15 @@ class Geocoder: CLGeocoder {
     }
     
     //MARK: - Methods
-    
-    
     // didUpdateLocation gets a new location every 10 seconds.
+    // in this function, we try to fetch new data every 3 minutes
     func tryNewFetchRequestForLocation(_ currentLocation: CLLocation, currentTime: Date) {
         
         // check if this is the first fetch
         if firstFetch {
             
             // make the request
-            fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
+            fetchRequestForLocation(currentLocation, completion: { (address, addressDetail) in
                 
                 // this is the completion block.
                 // this executes after the fetch
@@ -47,7 +47,7 @@ class Geocoder: CLGeocoder {
                 
                 // we now hold the latest successful fetched data for the viewcontroller to grab
                 self.currentAddress = address
-                self.currentSubAddress = subAddress
+                self.currentAddressDetail = addressDetail
                 print("Got first address! - updated time and locatin of last fetch")
                 
                 // set first fetch to false
@@ -60,7 +60,7 @@ class Geocoder: CLGeocoder {
             // is the user within 10 meters of last succesful fetch location?
             // was the last successful fetch request less than 3 minutes ago?
             let isWithinRangeOfPreviousLocation = locationOfLastFetch.distance(from: currentLocation) < 10
-            let isWithinTimeInterval = currentTime.timeIntervalSince(timeOfLastFetch) < 60 * 3
+            let isWithinTimeInterval = currentTime.timeIntervalSince(timeOfLastFetch) < amountOfMinutes
             
             switch (isWithinRangeOfPreviousLocation, isWithinTimeInterval) {
             case (true, true):
@@ -80,9 +80,9 @@ class Geocoder: CLGeocoder {
                 // within 3 minutes
                 
                 print("Fetching: Out of range - need new fetch")
-                fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
+                fetchRequestForLocation(currentLocation, completion: { (address, addressDetail) in
                     self.currentAddress = address
-                    self.currentSubAddress = subAddress
+                    self.currentAddressDetail = addressDetail
                     
                     self.locationOfLastFetch = currentLocation
                     self.timeOfLastFetch = currentTime
@@ -93,9 +93,9 @@ class Geocoder: CLGeocoder {
                 // and the user has traveled more than 10 meter
                 
                 print("Fetching: Out of range. Out of time - need new fetch")
-                fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
+                fetchRequestForLocation(currentLocation, completion: { (address, addressDetail) in
                     self.currentAddress = address
-                    self.currentSubAddress = subAddress
+                    self.currentAddressDetail = addressDetail
                     
                     self.locationOfLastFetch = currentLocation
                     self.timeOfLastFetch = currentTime
@@ -105,9 +105,7 @@ class Geocoder: CLGeocoder {
         }
     }
     
-    
-    
-    func fetchRequestForLocation(_ location: CLLocation, completion: @escaping (String, String) -> ()) {
+    private func fetchRequestForLocation(_ location: CLLocation, completion: @escaping (String, String) -> ()) {
         
         // geocoder tries to get string from coordinates
         CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
@@ -128,10 +126,10 @@ class Geocoder: CLGeocoder {
                     
                     // construct two strings
                     let address = "\(street), "
-                    let subAddress = "\(postalCode), \(city)"
+                    let addressDetail = "\(postalCode), \(city)"
                     
                     // pass them along to the completion block
-                    completion(address, subAddress)
+                    completion(address, addressDetail)
                 }
             }
         }

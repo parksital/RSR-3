@@ -9,11 +9,7 @@
 import Foundation
 import CoreLocation
 
-class LocationService: NSObject {
-    //MARK: - todo
-    // code commenting
-    // clean up code
-    
+class LocationService: NSObject {  
 
     //MARK: - Properties
     static let sharedInstance = LocationService()
@@ -34,11 +30,11 @@ class LocationService: NSObject {
     }
     
     //MARK: - Methods
-    func stopUpdatingLocations() {
+    private func stopUpdatingLocations() {
         self.locationManager.stopUpdatingLocation()
     }
     
-    @objc func startUpdatingLocations() {
+    @objc private func startUpdatingLocations() {
         self.locationManager.startUpdatingLocation()
     }
 }
@@ -47,7 +43,7 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // this is called when the authorization status changes.
         
-        //we want to know how the authorization has changed and act based on that
+        // action based on authorization status
         switch status {
         case .denied:
             print("User has denied authorization. Show alert")
@@ -64,27 +60,30 @@ extension LocationService: CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //this is called every time the user's location changes
+        
+        // if there is anything in locations.last, put it in currentLocation
         guard let currentLocation = locations.last else {
             print("nothing in locations")
             return
         }
     
+        // every time we get a new location, try to fetch the geocoded data
         geocoder.tryNewFetchRequestForLocation(currentLocation, currentTime: Date())
+        
+        // stop updating locations, so we don't make too many requests in a short time
         self.stopUpdatingLocations()
         
         // Wait for 10 seconds. Start updating locations again.
-        // I just found out about this SMH. Thursday March 8, 4AM.
         Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(startUpdatingLocations), userInfo: nil, repeats: false)
-        
         
         // set location to currentLocation
         self.location = currentLocation
         
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
     }
 }

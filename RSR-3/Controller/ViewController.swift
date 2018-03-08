@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Set Up UI
-    func setUpNavigationBar() {
+    private func setUpNavigationBar() {
         //set up the back  button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         

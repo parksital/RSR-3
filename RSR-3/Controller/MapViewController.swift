@@ -11,8 +11,6 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-    //MARK: - todo
-    // code commmenting
     
     //MARK: - Properties
     let sharedInstance = LocationService.sharedInstance
@@ -45,7 +43,7 @@ class MapViewController: UIViewController {
     }
     
     //MARK: - Setup
-    func setUpMapView() {
+    private func setUpMapView() {
         // get optional location
         if let userLocation = sharedInstance.location {
             
@@ -58,7 +56,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    func setUpInitialUI() {
+    private func setUpInitialUI() {
         mapView.delegate = self //set the mapview delegate to self
         self.navigationItem.title   = "RSR Pechhulp"    // set the navigation bar's title.
         belKostenWindow.alpha = 0.0     // make the belkosten window invisble
@@ -66,14 +64,14 @@ class MapViewController: UIViewController {
         setUpAddressWindowView()
         }
     
-    func setUpAddressWindowView() {
+    private func setUpAddressWindowView() {
         var calloutViewFrame = addressWindowView.frame
         
         // I had to hardcode this, feels bad man :(
         calloutViewFrame.origin = CGPoint(x: -calloutViewFrame.size.width / 2 + 15, y: -calloutViewFrame.size.height)
         
         let address = sharedInstance.geocoder.currentAddress
-        let subAddress = sharedInstance.geocoder.currentSubAddress
+        let subAddress = sharedInstance.geocoder.currentAddressDetail
         
         addressLabel.text = address
         subAddressLabel.text = subAddress
@@ -81,7 +79,7 @@ class MapViewController: UIViewController {
     }
     
     
-    func presentAlert() {
+    private func presentAlert() {
         let alertTitle      = "GPS aanzetten"
         let alertMessage    = "U heeft deze app geen toegang gegeven voor GPS. Zet dit a.u.b. aan in uw instellingen"
         
@@ -93,7 +91,7 @@ class MapViewController: UIViewController {
     }
     
     //MARK: - Helper methods
-    func checkAuthorizationStatus() {
+    private func checkAuthorizationStatus() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         
         // checking the authorization before presenting the map
@@ -138,7 +136,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    internal func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is MKUserLocation) {
             // we need the user location annotation
             return nil
@@ -156,7 +154,7 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
     
-    func returniPhonePinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
+    internal func returniPhonePinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
         // set up a re-use identifier
         let reuseId = "pinIdentifier"
         
@@ -173,7 +171,7 @@ extension MapViewController: MKMapViewDelegate {
         return pinViewForPhone
     }
     
-    func returniPadPinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
+    internal func returniPadPinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
         let reuseIdForPad = "iPadPinIdentifier"
         
         let pinViewForPad = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdForPad)
