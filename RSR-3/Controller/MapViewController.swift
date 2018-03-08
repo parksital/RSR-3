@@ -12,6 +12,9 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     
+    //MARK: - Constants
+    private let intervalOfSeconds = 15.0
+    
     //MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var belKostenWindow: UIView!
@@ -27,15 +30,12 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialUI()
-        
-        Timer.scheduledTimer(timeInterval: 12.0, target: self, selector: #selector(updateAddressLabels), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: intervalOfSeconds, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        centerMapView()
         checkAuthorizationStatus()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,17 +43,24 @@ class MapViewController: UIViewController {
     }
     
     //MARK: - Setup
-    private func centerMapView() {
+    @objc private func updateUI() {
         // get optional location
         if let userLocation = LocationService.sharedInstance.location {
             
-            // set coordinates and zoom level 
+            // set coordinates and zoom level
             let coordinates = userLocation.coordinate
             let zoomLevel = MKCoordinateSpanMake(0.02, 0.02)
             let region  = MKCoordinateRegion(center: coordinates, span: zoomLevel)
             
             mapView.setRegion(region, animated: true)
         }
+        
+        let address = LocationService.sharedInstance.geocoder.currentAddress
+        let subAddress = LocationService.sharedInstance.geocoder.currentAddressDetail
+        
+        addressLabel.text = address
+        subAddressLabel.text = subAddress
+        print("address labels updated.")
     }
     
     private func setUpInitialUI() {
@@ -61,6 +68,7 @@ class MapViewController: UIViewController {
         self.navigationItem.title   = "RSR Pechhulp"    // set the navigation bar's title.
         belKostenWindow.alpha = 0.0     // make the belkosten window invisble
         
+        updateUI()
         setUpAddressWindowView()
         }
     
@@ -71,16 +79,7 @@ class MapViewController: UIViewController {
         calloutViewFrame.origin = CGPoint(x: -calloutViewFrame.size.width / 2 + 15, y: -calloutViewFrame.size.height)
         addressWindowView.frame = calloutViewFrame
     }
-    
-    @objc private func updateAddressLabels() {
-        let address = LocationService.sharedInstance.geocoder.currentAddress
-        let subAddress = LocationService.sharedInstance.geocoder.currentAddressDetail
-        
-        addressLabel.text = address
-        subAddressLabel.text = subAddress
-        print("address labels updated.")
-    }
-    
+
     
     private func presentAlert() {
         let alertTitle      = "GPS aanzetten"
