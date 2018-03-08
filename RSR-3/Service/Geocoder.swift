@@ -11,13 +11,20 @@ import CoreLocation
 
 class Geocoder: CLGeocoder {
     
+    
+    //MARK: - Constants
+    private let maxAmountOfMinutes = 1 * 60.0       // fetch every minute
+    private let maxDistanceInMeters = 5.0           // or if user travels more than 5m
+    
+    
+    //MARK: - Properties
     // last time and place we successfully fetched
     private var timeOfLastFetch = Date()
     private var locationOfLastFetch = CLLocation()
     private var firstFetch = true   // only true the first time
+    
     var currentAddress = "Streetname, "             // placeholder
-    var currentAddressDetail = "1234 XY, Amsterdam"    // placeholder
-    private let amountOfMinutes = 3 * 60.0
+    var currentAddressDetail = "1234 XY, Amsterdam" // placeholder
     
     //MARK: - Initialization
     override init() {
@@ -59,8 +66,8 @@ class Geocoder: CLGeocoder {
             // we want to know:
             // is the user within 10 meters of last succesful fetch location?
             // was the last successful fetch request less than 3 minutes ago?
-            let isWithinRangeOfPreviousLocation = locationOfLastFetch.distance(from: currentLocation) < 10
-            let isWithinTimeInterval = currentTime.timeIntervalSince(timeOfLastFetch) < amountOfMinutes
+            let isWithinRangeOfPreviousLocation = locationOfLastFetch.distance(from: currentLocation) < maxDistanceInMeters
+            let isWithinTimeInterval = currentTime.timeIntervalSince(timeOfLastFetch) < maxAmountOfMinutes
             
             switch (isWithinRangeOfPreviousLocation, isWithinTimeInterval) {
             case (true, true):

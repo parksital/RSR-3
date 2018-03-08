@@ -36,6 +36,9 @@ class MapViewController: UIViewController {
         super.viewDidAppear(animated)
         setUpMapView()
         checkAuthorizationStatus()
+        
+        // update the address labels every 10 seconds
+        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(updateAddressLabels), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,13 +72,15 @@ class MapViewController: UIViewController {
         
         // I had to hardcode this, feels bad man :(
         calloutViewFrame.origin = CGPoint(x: -calloutViewFrame.size.width / 2 + 15, y: -calloutViewFrame.size.height)
-        
+        addressWindowView.frame = calloutViewFrame
+    }
+    
+    @objc private func updateAddressLabels() {
         let address = sharedInstance.geocoder.currentAddress
         let subAddress = sharedInstance.geocoder.currentAddressDetail
         
         addressLabel.text = address
         subAddressLabel.text = subAddress
-        addressWindowView.frame = calloutViewFrame
     }
     
     

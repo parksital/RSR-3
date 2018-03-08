@@ -9,7 +9,10 @@
 import Foundation
 import CoreLocation
 
-class LocationService: NSObject {  
+class LocationService: NSObject {
+    
+    //MARK: - Constants
+    private let secondsBetweenLocationUpdates = 10.0
 
     //MARK: - Properties
     static let sharedInstance = LocationService()
@@ -75,8 +78,8 @@ extension LocationService: CLLocationManagerDelegate {
         // stop updating locations, so we don't make too many requests in a short time
         self.stopUpdatingLocations()
         
-        // Wait for 10 seconds. Start updating locations again.
-        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(startUpdatingLocations), userInfo: nil, repeats: false)
+        // Wait X seconds. Start updating locations again.
+        Timer.scheduledTimer(timeInterval: secondsBetweenLocationUpdates, target: self, selector: #selector(startUpdatingLocations), userInfo: nil, repeats: false)
         
         // set location to currentLocation
         self.location = currentLocation
