@@ -11,9 +11,6 @@ import CoreLocation
 
 class Geocoder: CLGeocoder {
     
-    //MARK: - TODO 
-    
-    
     // last time and place we successfully fetched
     var timeOfLastFetch = Date()
     var locationOfLastFetch = CLLocation()
@@ -29,17 +26,12 @@ class Geocoder: CLGeocoder {
     
     //MARK: - Methods
     
-    // okay, get ready this method is YUUUGE
-    // we are calling this method every time didUpdateLocation gets a new location.
-    // didUpdateLocation gets a new location every 2-5 seconds.
-    // that's a lot of requests, so let's manage that:
+    
+    // didUpdateLocation gets a new location every 10 seconds.
     func tryNewFetchRequestForLocation(_ currentLocation: CLLocation, currentTime: Date) {
         
         // check if this is the first fetch
         if firstFetch {
-            
-            // set first fetch to false
-            self.firstFetch = false
             
             // make the request
             fetchRequestForLocation(currentLocation, completion: { (address, subAddress) in
@@ -48,27 +40,27 @@ class Geocoder: CLGeocoder {
                 // this executes after the fetch
                 
                 
-                // update the time and place of last successful fetch
+                // we now have inital data
+                // future fetch requests will compare against this inital time and location data
                 self.locationOfLastFetch = currentLocation
                 self.timeOfLastFetch = currentTime
                 
-                // grab the fetched data and store it
+                // we now hold the latest successful fetched data for the viewcontroller to grab
                 self.currentAddress = address
                 self.currentSubAddress = subAddress
                 print("Got first address! - updated time and locatin of last fetch")
-                           
+                
+                // set first fetch to false
+                self.firstFetch = false
             })
         } else {
-            // for every fetch request after the first
-            
-            // remember, we do not want to keep fetching.
+            // for every fetch request after the first one
             
             // we want to know:
-            // if the user is within 10 meters of where the last successful fetch request was
-            // if the last successful fetch request was 3 minutes ago
+            // is the user within 10 meters of last succesful fetch location?
+            // was the last successful fetch request less than 3 minutes ago?
             let isWithinRangeOfPreviousLocation = locationOfLastFetch.distance(from: currentLocation) < 10
             let isWithinTimeInterval = currentTime.timeIntervalSince(timeOfLastFetch) < 60 * 3
-            
             
             switch (isWithinRangeOfPreviousLocation, isWithinTimeInterval) {
             case (true, true):
@@ -127,17 +119,18 @@ class Geocoder: CLGeocoder {
                 // if there are placemarks, and there is a placemark at placemarks[0]
                 if let placemarks = placemarks, let placemark = placemarks.first {
                     
-                    // grab the following data
+                    // access placemark and store it in the following variables
+                    // 'guard let else' lets us retrieve optional data and use it within the same scope
                     guard let street = placemark.thoroughfare else { return }
                     guard let postalCode = placemark.postalCode else { return }
                     guard let city = placemark.locality else { return }
                     print("grabbing address")
                     
-                    // keep it in address and subaddress
+                    // construct two strings
                     let address = "\(street), "
                     let subAddress = "\(postalCode), \(city)"
                     
-                    // pass it along to the completion block
+                    // pass them along to the completion block
                     completion(address, subAddress)
                 }
             }

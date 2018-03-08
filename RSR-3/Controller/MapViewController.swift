@@ -114,7 +114,7 @@ class MapViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func belNuButtonPressed(_ sender: UIButton) {
-        let phone = "31204002679"
+        let phone = "319007788990"
         
         if let url = NSURL(string: "tel://\(phone)") {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)

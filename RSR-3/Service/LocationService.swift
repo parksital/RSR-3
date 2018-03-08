@@ -30,7 +30,6 @@ class LocationService: NSObject {
         super.init()
         
         locationManager.delegate = self
-        
         print("Location Service initialized")
     }
     
