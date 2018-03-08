@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIv-K9-FPI">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,22 +21,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RSR_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background-i5" translatesAutoresizingMaskIntoConstraints="NO" id="dxB-1i-Hdk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <variation key="heightClass=regular-widthClass=regular" image="img_background_ipad"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyg-Dx-3wX" userLabel="Nav Bar View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navig_bar_back" translatesAutoresizingMaskIntoConstraints="NO" id="0fN-fs-LHr">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <variation key="heightClass=regular-widthClass=regular" image="navig_bar_back_ipad"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kF8-6w-krF">
-                                        <rect key="frame" x="270" y="26" width="30" height="30"/>
+                                        <rect key="frame" x="325" y="26" width="30" height="30"/>
                                         <state key="normal" image="ic_over_normal"/>
                                         <state key="highlighted" image="ic_over_pressed"/>
                                         <connections>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSR Revalidatieservice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTC-Qj-vj7">
-                                        <rect key="frame" x="46.5" y="33" width="193.5" height="23"/>
+                                        <rect key="frame" x="101.5" y="33" width="193.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                 <state key="highlighted" image="ic_over_ipad" backgroundImage="btn_pressed_ipad"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhH-Gn-sIG">
-                                <rect key="frame" x="17" y="454" width="286" height="54"/>
+                                <rect key="frame" x="44.5" y="553" width="286" height="54"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <state key="normal" title="   RSR Pechhulp" image="ic_attention" backgroundImage="btn_normal"/>
                                 <connections>
@@ -172,33 +172,42 @@
             <objects>
                 <viewController id="TQc-4s-FjG" customClass="AboutViewController" customModule="RSR_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="URh-6N-kem">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-94-Qoq">
-                                <rect key="frame" x="0.0" y="63" width="320" height="505"/>
+                                <rect key="frame" x="0.0" y="63" width="375" height="604"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEf-CH-WCF" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="over_image" translatesAutoresizingMaskIntoConstraints="NO" id="0lh-Pb-Bjk">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0lh-Pb-Bjk" secondAttribute="height" multiplier="40:27" id="oqR-qh-Ze5"/>
                                                 </constraints>
                                                 <variation key="heightClass=regular-widthClass=regular" image="over_image_ipad"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="QRg-Pf-Rpr">
-                                                <rect key="frame" x="0.0" y="214" width="320" height="8"/>
+                                                <rect key="frame" x="0.0" y="251" width="375" height="8"/>
                                                 <variation key="heightClass=regular-widthClass=regular" image="line_ipad"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8oA-J8-Ghd">
-                                                <rect key="frame" x="8" y="230" width="304" height="267"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8oA-J8-Ghd">
+                                                <rect key="frame" x="8" y="267" width="359" height="233.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <mutableString key="text">Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Geden kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.
+
+Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel.</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                </variation>
                                             </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small_logo_ipad" translatesAutoresizingMaskIntoConstraints="NO" id="cxX-YT-7ms">
+                                                <rect key="frame" x="296" y="787" width="176" height="148"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -207,11 +216,43 @@
                                             <constraint firstItem="QRg-Pf-Rpr" firstAttribute="top" secondItem="0lh-Pb-Bjk" secondAttribute="bottom" constant="-2" id="C8C-3m-UeB"/>
                                             <constraint firstAttribute="trailing" secondItem="QRg-Pf-Rpr" secondAttribute="trailing" id="KhD-Mv-sve"/>
                                             <constraint firstAttribute="trailing" secondItem="0lh-Pb-Bjk" secondAttribute="trailing" id="Knt-AI-esK"/>
+                                            <constraint firstAttribute="trailing" secondItem="8oA-J8-Ghd" secondAttribute="trailing" constant="8" id="MYy-7G-JDe">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="8"/>
+                                            </constraint>
+                                            <constraint firstItem="8oA-J8-Ghd" firstAttribute="leading" secondItem="AEf-CH-WCF" secondAttribute="leading" constant="8" id="Mkb-cY-Uav"/>
                                             <constraint firstItem="0lh-Pb-Bjk" firstAttribute="top" secondItem="AEf-CH-WCF" secondAttribute="top" id="RNp-YE-dxr"/>
                                             <constraint firstItem="QRg-Pf-Rpr" firstAttribute="leading" secondItem="AEf-CH-WCF" secondAttribute="leading" id="a7I-Fi-zss"/>
-                                            <constraint firstItem="8oA-J8-Ghd" firstAttribute="leading" secondItem="AEf-CH-WCF" secondAttribute="leading" constant="8" id="j4h-y3-uWo"/>
-                                            <constraint firstAttribute="trailing" secondItem="8oA-J8-Ghd" secondAttribute="trailing" constant="8" id="z5V-56-Q9Q"/>
+                                            <constraint firstItem="cxX-YT-7ms" firstAttribute="centerX" secondItem="AEf-CH-WCF" secondAttribute="centerX" id="eRd-aR-Hxm"/>
+                                            <constraint firstAttribute="bottom" secondItem="cxX-YT-7ms" secondAttribute="bottom" constant="26" id="iDP-Zz-sdd"/>
+                                            <constraint firstItem="8oA-J8-Ghd" firstAttribute="leading" secondItem="AEf-CH-WCF" secondAttribute="leading" constant="8" id="j4h-y3-uWo">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="8oA-J8-Ghd" secondAttribute="trailing" constant="8" id="z5V-56-Q9Q">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                            </constraint>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="cxX-YT-7ms"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="MYy-7G-JDe"/>
+                                                <exclude reference="Mkb-cY-Uav"/>
+                                                <exclude reference="eRd-aR-Hxm"/>
+                                                <exclude reference="iDP-Zz-sdd"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="subviews">
+                                                <include reference="cxX-YT-7ms"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="MYy-7G-JDe"/>
+                                                <exclude reference="Mkb-cY-Uav"/>
+                                                <include reference="eRd-aR-Hxm"/>
+                                                <include reference="iDP-Zz-sdd"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -225,14 +266,14 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZs-W4-ewE" userLabel="Nav Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navig_bar_back" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-bq-eGz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <variation key="heightClass=regular-widthClass=regular" image="navig_bar_back_ipad"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Over RSR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72F-F1-J87">
-                                        <rect key="frame" x="120" y="31" width="81.5" height="23"/>
+                                        <rect key="frame" x="147.5" y="31" width="81.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -276,21 +317,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiJ-4V-P3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Sjh-HR-eET" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="-184.85915492957747"/>
+            <point key="canvasLocation" x="1844" y="-185.75712143928038"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="vB3-TM-oHO">
             <objects>
                 <viewController id="4bZ-28-PX0" customClass="MapViewController" customModule="RSR_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVs-tQ-HRJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVx-jI-1y9">
-                                <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="711"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUC-3r-8Ba">
-                                <rect key="frame" x="17" y="454" width="286" height="54"/>
+                                <rect key="frame" x="44.5" y="553" width="286" height="54"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="   Bel RSR nu" image="ic_phone" backgroundImage="btn_normal"/>
                                 <connections>
@@ -298,7 +339,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crE-qV-Ay7" userLabel="Bel Nu Popup">
-                                <rect key="frame" x="18" y="189" width="284" height="210"/>
+                                <rect key="frame" x="45.5" y="238.5" width="284" height="210"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_back" translatesAutoresizingMaskIntoConstraints="NO" id="eks-4U-I1w">
                                         <rect key="frame" x="0.0" y="26" width="284" height="184"/>
@@ -357,14 +398,14 @@ gebruikelijke belkosten.</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDx-b6-EPM" userLabel="iPhone Nav Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navig_bar_back" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-xp-GMZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <variation key="heightClass=regular-widthClass=regular" image="navig_bar_back_ipad"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSR Pechhulp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-Da-puq">
-                                        <rect key="frame" x="100" y="33" width="120" height="23"/>
+                                        <rect key="frame" x="127.5" y="33" width="120" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -828,6 +869,7 @@ voor het telefoongesprek</string>
         <image name="over_image" width="320" height="216"/>
         <image name="over_image_ipad" width="768" height="524"/>
         <image name="popup_back" width="284" height="184"/>
+        <image name="small_logo_ipad" width="176" height="148"/>
         <image name="terug_normal" width="54" height="22"/>
         <image name="terug_pressed" width="54" height="22"/>
     </resources>
