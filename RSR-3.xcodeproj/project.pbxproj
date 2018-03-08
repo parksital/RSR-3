@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A008BD28204EA07C0037C6BD /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A008BD27204EA07C0037C6BD /* Geocoder.swift */; };
-		A063445E2050BDA70028FFBB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A063445D2050BDA70028FFBB /* AboutViewController.swift */; };
 		A079D838204DCB2E00A448BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D837204DCB2E00A448BC /* AppDelegate.swift */; };
 		A079D83A204DCB2E00A448BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A079D839204DCB2E00A448BC /* ViewController.swift */; };
 		A079D83D204DCB2E00A448BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A079D83B204DCB2E00A448BC /* Main.storyboard */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		A008BD27204EA07C0037C6BD /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
-		A063445D2050BDA70028FFBB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A079D834204DCB2E00A448BC /* RSR-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSR-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A079D837204DCB2E00A448BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A079D839204DCB2E00A448BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			children = (
 				A079D839204DCB2E00A448BC /* ViewController.swift */,
 				A079D86E204DCC6100A448BC /* MapViewController.swift */,
-				A063445D2050BDA70028FFBB /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 				A079D83A204DCB2E00A448BC /* ViewController.swift in Sources */,
 				A008BD28204EA07C0037C6BD /* Geocoder.swift in Sources */,
 				A079D86D204DCBB300A448BC /* LocationService.swift in Sources */,
-				A063445E2050BDA70028FFBB /* AboutViewController.swift in Sources */,
 				A079D838204DCB2E00A448BC /* AppDelegate.swift in Sources */,
 				A079D86F204DCC6100A448BC /* MapViewController.swift in Sources */,
 				A079D840204DCB2E00A448BC /* RSR_3.xcdatamodeld in Sources */,
