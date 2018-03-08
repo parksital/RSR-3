@@ -39,7 +39,7 @@ class LocationService: NSObject {
         locationManager.stopUpdatingLocation()
     }
     
-    func startUpdatingLocations() {
+    @objc func startUpdatingLocations() {
         locationManager.startUpdatingLocation()
     }
 }
@@ -71,7 +71,15 @@ extension LocationService: CLLocationManagerDelegate {
             print("nothing in locations")
             return
         }
+        
+        
         geocoder.tryNewFetchRequestForLocation(currentLocation, currentTime: Date())
+        self.stopUpdatingLocations()
+        
+        // Wait for 10 seconds. Start updating locations again.
+        // I just found out about this SMH. Thursday March 8, 4AM.
+        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(startUpdatingLocations), userInfo: nil, repeats: false)
+        
         
         // set location to currentLocation
         self.location = currentLocation

@@ -38,9 +38,6 @@ class Geocoder: CLGeocoder {
         // check if this is the first fetch
         if firstFetch {
             
-            //if it is, stop updating locations, so the geocoder can handle the first fetch request
-            LocationService.sharedInstance.stopUpdatingLocations()
-            
             // set first fetch to false
             self.firstFetch = false
             
@@ -59,9 +56,7 @@ class Geocoder: CLGeocoder {
                 self.currentAddress = address
                 self.currentSubAddress = subAddress
                 print("Got first address! - updated time and locatin of last fetch")
-                
-                // start updating locations again
-                LocationService.sharedInstance.startUpdatingLocations()
+                           
             })
         } else {
             // for every fetch request after the first
