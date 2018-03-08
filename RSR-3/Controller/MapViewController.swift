@@ -80,6 +80,18 @@ class MapViewController: UIViewController {
         addressWindowView.frame = calloutViewFrame
     }
     
+    
+    func presentAlert() {
+        let alertTitle      = "GPS aanzetten"
+        let alertMessage    = "U heeft deze app geen toegang gegeven voor GPS. Zet dit a.u.b. aan in uw instellingen"
+        
+        let alertView = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let alertOkAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alertView.addAction(alertOkAction)
+        present(alertView, animated: true, completion: nil)
+    }
+    
     //MARK: - Helper methods
     func checkAuthorizationStatus() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
@@ -98,17 +110,6 @@ class MapViewController: UIViewController {
         case .restricted:
             presentAlert()
         }
-    }
-    
-    func presentAlert() {
-        let alertTitle      = "GPS aanzetten"
-        let alertMessage    = "U heeft deze app geen toegang gegeven voor GPS. Zet dit a.u.b. aan in uw instellingen"
-        
-        let alertView = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let alertOkAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
-        alertView.addAction(alertOkAction)
-        present(alertView, animated: true, completion: nil)
     }
     
     //MARK: - IBActions
@@ -145,6 +146,16 @@ extension MapViewController: MKMapViewDelegate {
             // we need the user location annotation
             return nil
         } else {
+            
+            var pinView = MKAnnotationView()
+            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                pinView = returniPadPinForAnnotation(annotation)
+            } else if UIDevice.current.userInterfaceIdiom == .phone {
+                pinView = returniPhonePinForAnnotation(annotation)
+            }
+            
+            /*
             // set up a re-use identifier
             let reuseId = "pinIdentifier"
             
@@ -155,11 +166,41 @@ extension MapViewController: MKMapViewDelegate {
             pinView.canShowCallout  = false
             pinView.pinTintColor    = .red
             
-            
             pinView.addSubview(addressWindowView)
             
             // return the pin
             return pinView
+ */
+            return pinView
         }
     }
+    
+    func returniPhonePinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
+        // set up a re-use identifier
+        let reuseId = "pinIdentifier"
+        
+        // create a MKPinAnnotationView
+        let pinViewForPhone = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        
+        // customize the pin
+        pinViewForPhone.canShowCallout  = false
+        pinViewForPhone.pinTintColor    = .red
+        
+        pinViewForPhone.addSubview(addressWindowView)
+        
+        // return the pin
+        return pinViewForPhone
+    }
+    
+    func returniPadPinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
+        let reuseIdForPad = "iPadPinIdentifier"
+        
+        let pinViewForPad = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdForPad)
+        
+        pinViewForPad.image = UIImage(named: "marker")
+        pinViewForPad.addSubview(addressWindowView)
+        
+        return pinViewForPad
+    }
+    
 }

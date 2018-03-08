@@ -431,6 +431,9 @@ Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bez
                                         <rect key="frame" x="8" y="32" width="54" height="22"/>
                                         <state key="normal" backgroundImage="terug_normal"/>
                                         <state key="highlighted" backgroundImage="terug_pressed"/>
+                                        <connections>
+                                            <segue destination="Aba-mT-z51" kind="unwind" unwindAction="unwindSegue:" id="7QY-Xd-4Mu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -617,11 +620,6 @@ gebruikelijke belkosten.</string>
                                     <constraint firstAttribute="bottom" secondItem="eks-4U-I1w" secondAttribute="bottom" id="njJ-xM-hgr"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RwX-7Y-eQE" userLabel="Map Nav Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -699,7 +697,7 @@ voor het telefoongesprek</string>
                     <viewLayoutGuide key="safeArea" id="yyQ-lP-b0d"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1585" y="671"/>
+            <point key="canvasLocation" x="1881" y="675"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nEy-N9-y6t">
