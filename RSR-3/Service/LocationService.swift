@@ -35,11 +35,11 @@ class LocationService: NSObject {
     
     //MARK: - Methods
     func stopUpdatingLocations() {
-        locationManager.stopUpdatingLocation()
+        self.locationManager.stopUpdatingLocation()
     }
     
     @objc func startUpdatingLocations() {
-        locationManager.startUpdatingLocation()
+        self.locationManager.startUpdatingLocation()
     }
 }
 //MARK: - Extension
@@ -47,16 +47,16 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // this is called when the authorization status changes.
         
-        // check the new status
+        //we want to know how the authorization has changed and act based on that
         switch status {
         case .denied:
             print("User has denied authorization. Show alert")
         case .authorizedWhenInUse:
             print("We have authorization. Proceed by presenting location")
-            locationManager.startUpdatingLocation()
+            self.locationManager.startUpdatingLocation()
         case .notDetermined:
             print("Auth status undetermined. Requesting authorization.")
-            locationManager.requestWhenInUseAuthorization()
+            self.locationManager.requestWhenInUseAuthorization()
         case .authorizedAlways:
             print("auth status: OK always.")
         case .restricted:
@@ -70,8 +70,7 @@ extension LocationService: CLLocationManagerDelegate {
             print("nothing in locations")
             return
         }
-        
-        
+    
         geocoder.tryNewFetchRequestForLocation(currentLocation, currentTime: Date())
         self.stopUpdatingLocations()
         

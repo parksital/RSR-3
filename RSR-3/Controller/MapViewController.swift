@@ -96,19 +96,16 @@ class MapViewController: UIViewController {
     func checkAuthorizationStatus() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         
+        // checking the authorization before presenting the map
         switch authorizationStatus {
         case .denied:
+            // the user has denied authorization, show an alert.
             presentAlert()
-        case .authorizedWhenInUse:
-            print("We have authorization. Proceed by presenting location")
-            
-        case .notDetermined:
-            print("auth status undetermined")
-            
-        case .authorizedAlways:
-            print("auth status: OK always.")
         case .restricted:
+            // the user's device is restricted, show an alert.
             presentAlert()
+        default:
+            break
         }
     }
     
