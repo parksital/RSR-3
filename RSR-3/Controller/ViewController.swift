@@ -8,16 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {    
+class ViewController: UIViewController {
     
-    //MARK: - Properties
-    let sharedInstance = LocationService.sharedInstance
-
-        
+    private let sharedInstance = LocationService.sharedInstance
+    
     //MARK: - Initialization
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         setUpNavigationBar()
         
         // we do this to hide the nagivation bar, but still utilize the back swipe gestures

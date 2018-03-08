@@ -24,7 +24,7 @@ class LocationService: NSObject {
     //MARK: - Initialization
     override private init() {
         locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         super.init()
         

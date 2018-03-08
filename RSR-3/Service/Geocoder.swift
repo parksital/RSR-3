@@ -14,7 +14,7 @@ class Geocoder: CLGeocoder {
     
     //MARK: - Constants
     private let maxAmountOfMinutes = 1 * 60.0       // fetch every minute
-    private let maxDistanceInMeters = 5.0           // or if user travels more than 5m
+    private let maxDistanceInMeters = 10.0           // or if user travels more than 5m
     
     
     //MARK: - Properties
@@ -55,7 +55,7 @@ class Geocoder: CLGeocoder {
                 // we now hold the latest successful fetched data for the viewcontroller to grab
                 self.currentAddress = address
                 self.currentAddressDetail = addressDetail
-                print("Got first address! - updated time and locatin of last fetch")
+                print("Got first address! - updated time and location of last fetch")
                 
                 // set first fetch to false
                 self.firstFetch = false
@@ -74,19 +74,19 @@ class Geocoder: CLGeocoder {
                 // user is within 10 meters of last place of successful fetch
                 // last successful fetch is not 3 minutes old yet
                 
-                print("Not fetching: Within range. Within time")
+                print("No fetch: Within range. Within time")
                 break
             case (true, false):
                 // last successful fetch is older than 3 minutes
                 // but the user is still in the area
                 
-                print("Not fetching: Within range. Out of time - use last fetch")
+                print("No fetch: Within range. Out of time - use last fetch")
                 break
             case (false, true):
                 // the user has traveled more than 10 meters since the last successful fetch
                 // within 3 minutes
                 
-                print("Fetching: Out of range - need new fetch")
+                print("Fetch: Out of range - need new fetch")
                 fetchRequestForLocation(currentLocation, completion: { (address, addressDetail) in
                     self.currentAddress = address
                     self.currentAddressDetail = addressDetail
@@ -99,7 +99,7 @@ class Geocoder: CLGeocoder {
                 // the last successful fetch was longer than 3 minutes ago
                 // and the user has traveled more than 10 meter
                 
-                print("Fetching: Out of range. Out of time - need new fetch")
+                print("Fetch: Out of range. Out of time - need new fetch")
                 fetchRequestForLocation(currentLocation, completion: { (address, addressDetail) in
                     self.currentAddress = address
                     self.currentAddressDetail = addressDetail
@@ -127,6 +127,7 @@ class Geocoder: CLGeocoder {
                     // access placemark and store it in the following variables
                     // 'guard let else' lets us retrieve optional data and use it within the same scope
                     guard let street = placemark.thoroughfare else { return }
+//                    guard let number = placemark.subThoroughfare else { return }
                     guard let postalCode = placemark.postalCode else { return }
                     guard let city = placemark.locality else { return }
                     print("grabbing address")

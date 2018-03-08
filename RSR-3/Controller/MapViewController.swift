@@ -12,9 +12,6 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     
-    //MARK: - Properties
-    let sharedInstance = LocationService.sharedInstance
-    
     //MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var belKostenWindow: UIView!
@@ -30,15 +27,15 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialUI()
+        
+        Timer.scheduledTimer(timeInterval: 12.0, target: self, selector: #selector(updateAddressLabels), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setUpMapView()
+        centerMapView()
         checkAuthorizationStatus()
         
-        // update the address labels every 10 seconds
-        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(updateAddressLabels), userInfo: nil, repeats: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,9 +43,9 @@ class MapViewController: UIViewController {
     }
     
     //MARK: - Setup
-    private func setUpMapView() {
+    private func centerMapView() {
         // get optional location
-        if let userLocation = sharedInstance.location {
+        if let userLocation = LocationService.sharedInstance.location {
             
             // set coordinates and zoom level 
             let coordinates = userLocation.coordinate
@@ -76,11 +73,12 @@ class MapViewController: UIViewController {
     }
     
     @objc private func updateAddressLabels() {
-        let address = sharedInstance.geocoder.currentAddress
-        let subAddress = sharedInstance.geocoder.currentAddressDetail
+        let address = LocationService.sharedInstance.geocoder.currentAddress
+        let subAddress = LocationService.sharedInstance.geocoder.currentAddressDetail
         
         addressLabel.text = address
         subAddressLabel.text = subAddress
+        print("address labels updated.")
     }
     
     
