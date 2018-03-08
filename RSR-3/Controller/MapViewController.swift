@@ -155,22 +155,6 @@ extension MapViewController: MKMapViewDelegate {
                 pinView = returniPhonePinForAnnotation(annotation)
             }
             
-            /*
-            // set up a re-use identifier
-            let reuseId = "pinIdentifier"
-            
-            // create a MKPinAnnotationView
-            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            
-            // customize the pin
-            pinView.canShowCallout  = false
-            pinView.pinTintColor    = .red
-            
-            pinView.addSubview(addressWindowView)
-            
-            // return the pin
-            return pinView
- */
             return pinView
         }
     }
@@ -195,8 +179,9 @@ extension MapViewController: MKMapViewDelegate {
     func returniPadPinForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView {
         let reuseIdForPad = "iPadPinIdentifier"
         
-        let pinViewForPad = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdForPad)
+        let pinViewForPad = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdForPad)
         
+        pinViewForPad.canShowCallout = false
         pinViewForPad.image = UIImage(named: "marker")
         pinViewForPad.addSubview(addressWindowView)
         

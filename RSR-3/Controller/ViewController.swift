@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         setUpNavigationBar()
+        
+        // we do this to hide the nagivation bar, but still utilize the back swipe gestures
         self.navigationController?.navigationBar.isHidden = true
     }
 
@@ -36,10 +38,6 @@ class ViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-        
-        
-    }
-    
-    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) { }
+
 }
